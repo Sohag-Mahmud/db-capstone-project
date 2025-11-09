@@ -21,4 +21,3 @@ FROM Menus
 JOIN MenuItems ON MenuItems.ItemID = Menus.ItemID
 WHERE Menus.MenuID = ANY (SELECT Orders.MenuIDFROM Orders GROUP BY Orders.MenuID
 HAVING COUNT(*) > 2 );
--- -----------------------------------------------------
